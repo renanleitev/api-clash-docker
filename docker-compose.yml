@@ -6,7 +6,7 @@ services:
   app-server:
     # Configuration for building the docker image for the backend service
     build:
-      context: clash-royale-api # Use an image built from the specified dockerfile
+      context: api-clash-royale # Use an image built from the specified dockerfile
       dockerfile: Dockerfile
     ports:
       - "3000:3000" # Forward the exposed port 8080 on the container to port 8080 on the host machine
@@ -21,7 +21,7 @@ services:
   # Frontend Service 
   app-client:
     build:
-      context: clash-royale-front # Use an image built from the specified dockerfile
+      context: api-clash-front # Use an image built from the specified dockerfile
       dockerfile: Dockerfile
     ports:
       - "9090:80" # Forward the exposed port 80 on the container to port 80 on the host machine
