@@ -15,8 +15,8 @@ services:
       - db # This service depends on mysql. Start that first.
     environment: # Pass environment variables to the service
       CLASH_TOKEN_API: ''
-      CLASH_BASE_URL: 'https://proxy.royaleapi.dev/v1'
       DATABASE_URL: ''  
+      CLASH_BASE_URL: 'https://proxy.royaleapi.dev/v1'
     networks:
         - clash-royale-network
 

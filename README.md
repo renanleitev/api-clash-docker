@@ -9,6 +9,15 @@ Aplicação Full Stack de Clash Royale para analisar jogadores, cards e estatís
 3. Banco de Dados: MongoDB 
 4. Deploy: Docker Compose
 
+# Configuração
+
+Primeiro, defina as seguintes variáveis no arquivo `docker-compose.yml`:
+
+    CLASH_TOKEN_API: ''
+    DATABASE_URL: ''  
+
+Obs: Essas variáveis são essenciais para conectar o back-end com o banco de dados MongoDB.
+
 ## Para obter os componentes
 
 Faça o clone deste repositório:
