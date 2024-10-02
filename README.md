@@ -9,7 +9,12 @@ Aplicação Full Stack de Clash Royale para analisar jogadores, cards e estatís
 3. Banco de Dados: MongoDB 
 4. Deploy: Docker Compose
 
-# Configuração
+## Requisitos
+
+- Ter Docker e Docker Compose instalado
+- Opcional: Servidor público para deploy (AWS, Azure, Google Cloud)
+
+## Configuração
 
 Primeiro, defina as seguintes variáveis no arquivo `docker-compose.yml`:
 
