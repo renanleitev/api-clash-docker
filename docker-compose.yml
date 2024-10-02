@@ -1,0 +1,39 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+# Define services
+services:
+  # App backend service
+  app-server:
+    # Configuration for building the docker image for the backend service
+    build:
+      context: clash-royale-api # Use an image built from the specified dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    restart: always
+    depends_on: 
+      - db # This service depends on mysql. Start that first.
+    environment: # Pass environment variables to the service
+      CLASH_TOKEN_API: ''
+      CLASH_BASE_URL: 'https://proxy.royaleapi.dev/v1'
+      DATABASE_URL: ''  
+    networks:
+        - clash-royale-network
+
+  # Frontend Service 
+  app-client:
+    build:
+      context: clash-royale-front # Use an image built from the specified dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "9090:80" # Forward the exposed port 80 on the container to port 80 on the host machine
+    restart: always
+    depends_on:
+      - app-server
+    networks:
+        - clash-royale-network
+
+# Networks to be created to facilitate communication between containers
+networks:
+    clash-royale-network:
+        driver: bridge
