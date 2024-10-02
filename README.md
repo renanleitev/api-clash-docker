@@ -26,7 +26,7 @@ Faça o clone deste repositório:
 
 Depois, acesse a pasta com o código (ou usando o terminal):
 
-    cd clash-royale-docker
+    cd api-clash-docker
 
 De dentro da pasta `api-clash-docker`, faça o clone dos repositórios Front End e Back End:
 

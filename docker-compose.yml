@@ -14,8 +14,8 @@ services:
     depends_on: 
       - db # This service depends on mysql. Start that first.
     environment: # Pass environment variables to the service
-      CLASH_TOKEN_API: ''
-      DATABASE_URL: ''  
+      CLASH_TOKEN_API: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9'
+      DATABASE_URL: 'mongodb+srv://renanleitev:Windows10@senac.gttso74.mongodb.net/?retryWrites=true&w=majority&appName=senac'  
       CLASH_BASE_URL: 'https://proxy.royaleapi.dev/v1'
     networks:
         - clash-royale-network
