@@ -23,6 +23,30 @@ Primeiro, defina as seguintes variáveis no arquivo `docker-compose.yml`:
 
 Obs: Essas variáveis são essenciais para conectar o back-end com o banco de dados MongoDB.
 
+## Para rodar em um servidor externo (AWS, Cloud, Oracle)
+
+Dê permissão para executar o script abaixo (ele irá trocar a url localhost pelo ip do servidor):
+
+	sudo chmod +x url.sh
+
+Passe o ip do servidor para o script alterar a URL da API backend no arquivo axios.js:
+
+	./url.sh <IP_SERVIDOR:3000>
+
+Obs: É importante que a porta `3000` esteja aberta no seu servidor
+
+Após isso, deverá receber uma mensagem no terminal informando que a substituição da URL foi feita com sucesso.
+
+	"Substituição concluída. O arquivo original foi salvo como axios.js.bak."
+
+Caso ocorra algum erro, verifique se o arquivo `url.sh` possui permissão de execução (chmod +x) ou se você fez o `git clone` corretamente do repositório `api-clash-front`.
+
+Obs: Considerando que você está na pasta `api-clash-docker`, você pode visualizar o conteúdo do arquivo `axios.js` e checar se o IP do seu servidor está presente no arquivo: 
+
+```
+cat ./api-clash-front/src/services/axios.js
+```
+
 ## Para obter os componentes
 
 Faça o clone deste repositório:
